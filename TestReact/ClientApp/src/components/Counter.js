@@ -11,7 +11,9 @@ const Counter = props => (
 
     <p>Current count: <strong>{props.count}</strong></p>
 
-    <button className="btn btn-primary" onClick={props.increment}>Increment</button>
+        <button className="btn btn-primary" onClick={props.increment}>Increment</button>
+        <button className="btn btn-primary" onClick={props.decrement}>Decrement</button>
+        <button className="btn btn-info" onClick={props.reset}>Reset</button>
   </div>
 );
 

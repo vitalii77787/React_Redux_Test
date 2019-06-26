@@ -1,10 +1,13 @@
 const incrementCountType = 'INCREMENT_COUNT';
 const decrementCountType = 'DECREMENT_COUNT';
+const resetCountType = 'RESET_COUNT';
+
 const initialState = { count: 0 };
 
 export const actionCreators = {
   increment: () => ({ type: incrementCountType }),
-  decrement: () => ({ type: decrementCountType })
+    decrement: () => ({ type: decrementCountType }),
+    reset: () => ({ type: resetCountType }),
 };
 
 export const reducer = (state, action) => {
@@ -16,7 +19,11 @@ export const reducer = (state, action) => {
 
   if (action.type === decrementCountType) {
     return { ...state, count: state.count - 1 };
-  }
+    }
+
+    if (action.type === resetCountType) {
+        return initialState;
+    }
 
   return state;
 };
